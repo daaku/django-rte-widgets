@@ -1,0 +1,22 @@
+<script type="text/javascript">
+(function() {
+
+var id = {{ id }};
+var el = YAHOO.util.Dom.get(id);
+YAHOO.util.Dom.addClass(el.parentNode, 'yui-skin-sam');
+(new YAHOO.widget.Editor(id, {{ rte_config }})).render();
+
+// this is _specifically_ for admin, since i'm writing it for admin
+// kinda kludgy FIXME
+if (
+        el.previousSibling &&
+        el.previousSibling.tagName &&
+        el.previousSibling.tagName == 'LABEL' &&
+        YAHOO.util.Dom.getStyle(el.previousSibling, 'float') == 'left' &&
+        YAHOO.util.Dom.getStyle(el.previousSibling, 'display') == 'block'
+    ) {
+    window.setTimeout(function() { YAHOO.util.Dom.setStyle(id + '_container', 'margin-left', '108px'); }, 100);
+}
+
+})();
+</script>
