@@ -1,1 +1,1 @@
-wmd_options = { autostart: false };
+wmd_options = { autostart: false, output: "Markdown" };

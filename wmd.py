@@ -16,7 +16,6 @@ class WmdTextarea(Textarea):
 
     def __init__(self, attrs=None, config={}):
         self.rte_config = {
-            'output': config.pop('output', 'Markdown'),
             'height': config.pop('height', '200px'),
             'width': config.pop('width', '700px'),
         }
