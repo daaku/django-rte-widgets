@@ -1,16 +1,16 @@
 from django.forms import Textarea
 from django.template.loader import render_to_string
 from django.utils.safestring import mark_safe
-import json
+from django.utils import simplejson as json
 
 
 class YuiTextarea(Textarea):
     class Media:
         js = (
-            'http://yui.yahooapis.com/combo?2.6.0/build/yahoo-dom-event/yahoo-dom-event.js&2.6.0/build/container/container_core-min.js&2.6.0/build/menu/menu-min.js&2.6.0/build/element/element-beta-min.js&2.6.0/build/button/button-min.js&2.6.0/build/editor/editor-min.js',
+            'http://yui.yahooapis.com/combo?2.7.0/build/yahoo-dom-event/yahoo-dom-event.js&2.7.0/build/container/container_core-min.js&2.7.0/build/menu/menu-min.js&2.7.0/build/element/element-min.js&2.7.0/build/button/button-min.js&2.7.0/build/editor/editor-min.js',
         )
         css = {
-            'all': ('http://yui.yahooapis.com/combo?2.6.0/build/assets/skins/sam/skin.css',)
+            'all': ('http://yui.yahooapis.com/combo?2.7.0/build/assets/skins/sam/skin.css',)
         }
 
     def __init__(self, attrs=None, config={}):
